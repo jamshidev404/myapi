@@ -13,7 +13,7 @@ const DistrictSchema = mongoose.Schema(
   },
   {
     timestamp: true,
-  }
+  },
 );
 
 module.exports = mongoose.model("district", DistrictSchema);

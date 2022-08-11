@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //==== ROUTES ====//
-app.use('/api/region', require('./routes/region'))
-app.use('/api/district', require('./routes/district'))
+app.use("/api/region", require("./routes/region"));
+app.use("/api/district", require("./routes/district"));
 
 const port = process.env.PORT;
 MONGO_URL = process.env.MONGO_URL;
@@ -29,4 +29,3 @@ mongoose
   .catch((err) => {
     console.log("No connection", err);
   });
-

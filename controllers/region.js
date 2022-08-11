@@ -24,11 +24,13 @@ exports.getAllRegions = async (req, res) => {
 };
 
 exports.getOne = async (req, res) => {
-  const result = await Region.findById({ _id: req.params.id })
+  const result = await Region.findById({ _id: req.params.id });
   await District.find({ regionId: req.params.id }).exec((err, data) => {
     if (err) {
       return res.status(404).json({ success: false, err });
     }
-    return res.status(200).json({ success: true, data: result, districts: data });
+    return res
+      .status(200)
+      .json({ success: true, data: result, districts: data });
   });
-}
+};
