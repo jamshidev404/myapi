@@ -21,6 +21,7 @@ exports.getAllDistricts = async (req, res) => {
 };
 
 exports.getOne = async (req, res) => {
+  console.log(req.params.id);
   await District.findById({ _id: req.params.id }).exec((err, data) => {
     if (err) return res.status(400).json({ success: false, err });
     return res.status(200).json({ success: true, data });

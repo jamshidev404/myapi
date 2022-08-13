@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 //==== ROUTES ====//
 app.use("/api/region", require("./routes/region"));
 app.use("/api/district", require("./routes/district"));
+app.use("/api/users", require("./routes/user"));
 
 const port = process.env.PORT;
 MONGO_URL = process.env.MONGO_URL;
@@ -23,7 +24,7 @@ mongoose
   })
   .then(() => {
     app.listen(port, () => {
-      console.log(`Server running on the port ${port} \n DB connected`);
+      console.log(`Server running on the port ${port} \nDB connected`);
     });
   })
   .catch((err) => {
