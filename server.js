@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/region", require("./routes/region"));
 app.use("/api/district", require("./routes/district"));
 app.use("/api/users", require("./routes/user"));
+app.use("/api/step", require("./routes/step"))
 
 const port = process.env.PORT;
 MONGO_URL = process.env.MONGO_URL;
